@@ -10,25 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-<form action="page.php" name="author" target="_parent">
-    <p><b>Книги указанного автора:</b></p>
-    <select name="author" id="">
-        <?php
-        foreach ($out as $author) {
-            echo "<option value=\"$author\">$author</option>";
-        }
-        ?>
-    </select>
-    <p><input type="submit" value="Выбрать"></p>
-</form>
-
-<form action="times.php" name="dates" target="_parent">
-    <p><b>Книги, журналахы и газеты, опубликованныу за указанный временной период:;</b></p>
-       <input type="date" name="date_start" required="required">
-	   <input type="date" name="date_end" required="required">
-    <p><input type="submit" value="Выбрать"></p>
-</form>
-
 <form action="publish.php" name="res_starts" target="_parent">
     <p><b>Книги указанного издательства:</b></p>
     <select name="res_starts" id="">
@@ -40,5 +21,25 @@
     </select>
     <p><input type="submit" value="Выбрать"></p>
 </form>
+
+<form action="times.php" name="dates" target="_parent">
+    <p><b>Введите временной период (в годах):</b></p>
+       <input type="date" name="date_start" required="required">
+	   <input type="date" name="date_end" required="required">
+    <p><input type="submit" value="Выбрать"></p>
+</form>
+
+<form action="page.php" name="author" target="_parent">
+    <p><b>Выберите имя автора:</b></p>
+    <select name="author" id="">
+        <?php
+        foreach ($out as $author) {
+            echo "<option value=\"$author\">$author</option>";
+        }
+        ?>
+    </select>
+    <p><input type="submit" value="Выбрать"></p>
+</form>
+
 </body>
 </html>
